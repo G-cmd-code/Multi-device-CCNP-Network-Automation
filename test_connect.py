@@ -1,7 +1,7 @@
 from netmiko import ConnectHandler
 
 
-def mgmt_config(hostname, ntp_server="192.168.122.1"):
+def mgmt_config(hostname, ntp_server="192.168.??.??"):
     return [
         f"hostname {hostname}",
         "banner motd #Authorized access only - CCNP Lab#",
@@ -53,7 +53,7 @@ def redistribution_config(ospf_pid, eigrp_asn):
 def acl_config():
     return [
         "ip access-list standard MGMT_ONLY",
-        " permit 192.168.122.0 0.0.0.255",
+        " permit 192.168.??.?? 0.0.0.255",
         " deny any log",
         "ip access-list extended BLOCK_TELNET_FROM_R3",
         " deny tcp 3.3.3.3 0.0.0.0 any eq 23",
